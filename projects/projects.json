@@ -1,0 +1,339 @@
+[
+  {
+    "name": "Gesture Controller Virtual Mouse",
+    "desc": "Created a virtual mouse application allowing hand gesture control via a webcam, enhancing accessibility for users with limited mobility.",
+    "image": "p1",
+    "category": "project",
+    "links": {
+      "view": "https://github.com/srinunaikkatravath/Gesture-Controlled-Virtual-Mouse.git",
+      "code": "https://github.com/srinunaikkatravath/Gesture-Controlled-Virtual-Mouse.git"
+    }
+  },
+  {
+    "name": "Automatic Plant Irrigation",
+    "desc": "Engineered an automated irrigation system using Arduino to monitor soil moisture levels, promoting water conservation and plant health.",
+    "image": "1",
+    "category": "project",
+    "links": {
+      "view": "https://github.com/srinunaikkatravath/Automatic-Plant-Irrigation-System.github.io.git",
+      "code": "https://github.com/srinunaikkatravath/Automatic-Plant-Irrigation-System.github.io.git"
+    }
+  },
+  {
+    "name": "Student attendence and result management system",
+    "desc": "Designed a system for managing student attendance and academic results, streamlining data management for administrative tasks.",
+    "image": "2",
+    "category": "project",
+    "links": {
+      "view": "https://github.com/srinunaikkatravath/Student-attendence-and-result-management-system-main.git",
+      "code": "https://github.com/srinunaikkatravath/Student-attendence-and-result-management-system-main.git"
+    }
+  },
+  {
+    "name": "Ecommerce",
+    "desc": "Basic Website.",
+    "image": "3",
+    "category": "project",
+    "links": {
+      "view": "https://srinunaikkatravath.github.io/Ecommerce/",
+      "code": "https://github.com/srinunaikkatravath/Ecommerce.git"
+    }
+  },
+  {
+    "name": "To Do Loist",
+    "desc": "Basic To Do List.",
+    "image": "4",
+    "category": "project",
+    "links": {
+      "view": "https://srinunaikkatravath.github.io/OCTANET_JUNE_TO_DO_LIST/",
+      "code": "https://github.com/srinunaikkatravath/OCTANET_JUNE_TO_DO_LIST.git"
+    }
+  },
+
+
+
+  
+  {
+    "name": "Python",
+    "desc": "Completion certificate for Basics of Python",
+    "image": "c1",
+    "category": "certificate",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Java",
+    "desc": "It will cover basic topics in Java language such as classes, data structures, inheritance, exception handling, etc. You are expected to be proficient in either Java 7 or Java 8.",
+    "image": "c2",
+    "category": "certificate",
+    "links": {
+      "view": "https://www.hackerrank.com/certificates/iframe/56ee145534b6",
+      "code": "#"
+    }
+  },
+  {
+    "name": "SQL",
+    "desc": "It includes simple queries, relationships, and aggregators.",
+    "image": "c3",
+    "category": "certificate",
+    "links": {
+      "view": "https://www.hackerrank.com/certificates/iframe/6708c8d266bb",
+      "code": "#"
+    }
+  },
+  {
+    "name": "AWS Knowledge: Cloud Essentials",
+    "desc": "Issued by Amazon Web Services Training and Certification",
+    "image": "b1",
+    "category": "badge",
+    "links": {
+      "view": "https://www.credly.com/badges/10567338-f64e-4f42-9f4d-68b0167ec12e/public_url",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Data Analytics Essentials",
+    "desc": "Issued by Coursera | Authorized by IBM",
+    "image": "b2",
+    "category": "badge",
+    "links": {
+      "view": "https://www.credly.com/badges/6f5e7ad7-9497-40e7-b9ca-2a23491336f8/public_url",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Cybersecurity Essentials",
+    "desc": "Issued by Cisco",
+    "image": "b3",
+    "category": "badge",
+    "links": {
+      "view": "https://www.credly.com/badges/78cde261-11f0-480f-970a-fb9831dbf591/public_url",
+      "code": "#"
+    }
+  },
+  {
+    "name": "CCNA: Introduction to Networks",
+    "desc": "Issued by Cisco",
+    "image": "b4",
+    "category": "badge",
+    "links": {
+      "view": "https://www.credly.com/badges/59378c9b-fe67-4cf8-8856-02427cad271c/public_url",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Networking Essentials",
+    "desc": "Issued by Cisco",
+    "image": "b5",
+    "category": "badge",
+    "links": {
+      "view": "https://www.credly.com/badges/e3be080c-05ea-417d-a927-95693ae058c6/public_url",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Project Management Fundamentals",
+    "desc": "Issued by IBM SkillsBuild",
+    "image": "b6",
+    "category": "badge",
+    "links": {
+      "view": "https://www.credly.com/badges/a71bded4-83a7-4537-802c-de575d196caf/public_url",
+      "code": "#"
+    }
+  },
+
+
+  
+  {
+    "name": "CCNA: Introduction to Networks",
+    "desc": "CCNA: Introduction to Networks",
+    "image": "c4",
+    "category": "certificate",
+    "links": {
+      "view": "https://www.netacad.com/certificates?issuanceId=d9f662d8-00d8-4590-aa7d-b3a724335b40",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Cybersecurity Essentials",
+    "desc": "Cybersecurity Essentials",
+    "image": "c5",
+    "category": "certificate",
+    "links": {
+      "view": "https://www.netacad.com/certificates?issuanceId=adb8e7e1-147b-4397-a0f1-5033b3972af7",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Introduction to Financial Markets",
+    "desc": "an online non-credit course authorized by Indian School of Business and offered through Coursera",
+    "image": "c6",
+    "category": "certificate",
+    "links": {
+      "view": "https://coursera.org/share/6508d6fca28fa50483b60bce77b7f332",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Introduction to Front-End Development",
+    "desc": "an online non-credit course authorized by Meta and offered through Coursera.",
+    "image": "c7",
+    "category": "certificate",
+    "links": {
+      "view": "https://coursera.org/share/229e7b6a1d251a17d6423db501c321a0",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Build a Full Website using WordPress",
+    "desc": "an online non-credit project authorized by Coursera Project Network and offered through Coursera.",
+    "image": "c8",
+    "category": "certificate",
+    "links": {
+      "view": "https://coursera.org/share/67b1409270284d4e20d83b7b54df1cce",
+      "code": "#"
+    }
+  },
+  {
+    "name": "VISTA - Tech Fest",
+    "desc": "Hackathon Tech Fest",
+    "image": "h1",
+    "category": "hackathon",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "VISTA, Agri-Tech",
+    "desc": "Next Afield farmer portal and price info",
+    "image": "h2",
+    "category": "hackathon",
+    "links": {
+      "view": "",
+      "code": ""
+    }
+  },
+  {
+    "name": "AI + ML",
+    "desc": "This certificate provided by Indian Institute of Technology (IIT), Bhubaneswar, Participated in the E-Summit'23.",
+    "image": "w1",
+    "category": "workshop",
+    "links": {
+      "view": "https://d8it4huxumps7.cloudfront.net/lambda-pdfs/certificate-images/646d5b92-4cc0-419b-b75f-05547cb6e27a.jpg",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Accenture Innovation Challenge 2023",
+    "desc": "Accenture Innovation Challenge 2023.",
+    "image": "m1",
+    "category": "meetup",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Flipkart GRiD 5.0 - Software Development Track",
+    "desc": "Flipkart GRiD 5.0 - Software Development Track.",
+    "image": "m2",
+    "category": "meetup",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "TVS Credit E.P.I.C 5.0 — IT Challenge",
+    "desc": "TVS Credit E.P.I.C 5.0 — IT Challenge.",
+    "image": "m3",
+    "category": "meetup",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Talent Titan Quiz",
+    "desc": "This certificate provided by School of Management Studies (SOMS), National Institute of Technology (NIT), Calicut.",
+    "image": "m4",
+    "category": "meetup",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Hour of Code",
+    "desc": "Hour of Code, Vignan's IIT ACM Student chapter.",
+    "image": "w2",
+    "category": "workshop",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "The Hour of Code",
+    "desc": "CODE.org",
+    "image": "w3",
+    "category": "workshop",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Full Stack Web Development",
+    "desc": "Slash Mark - Full Stack Web Development Internship.",
+    "image": "i3",
+    "category": "internship",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Android Developer Virtual Internship",
+    "desc": "EduSkills - Google for Developers.",
+    "image": "i5",
+    "category": "internship",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Web Development",
+    "desc": "Internpe - Web Development.",
+    "image": "i4",
+    "category": "internship",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Machine Learning with Python",
+    "desc": "Verzeo - Machine Learning with Python.",
+    "image": "i1",
+    "category": "internship",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  },
+  {
+    "name": "Web Development",
+    "desc": "Bharat Intern - Web Development.",
+    "image": "i2",
+    "category": "internship",
+    "links": {
+      "view": "#",
+      "code": "#"
+    }
+  }
+]
