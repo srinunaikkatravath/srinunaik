@@ -18,7 +18,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -33,20 +33,25 @@
 </head>
 <body>
 
+    <!-- Three.js 3D WebGL Background Canvas Container -->
+    <div id="three-canvas-container"></div>
+
     <!-- Header & Navigation -->
     <header id="navbarHeader">
         <div class="nav-container">
             <a href="#home" class="logo">
                 <span>Srinu Naik</span>
-                <span class="logo-badge">DEV.AI</span>
+                <span class="logo-badge">CSE.AI</span>
             </a>
 
             <nav>
                 <ul class="nav-menu" id="navMenu">
                     <li><a class="nav-link active" href="#home">Home</a></li>
                     <li><a class="nav-link" href="#about">About</a></li>
+                    <li><a class="nav-link" href="#studio">3D Studio</a></li>
                     <li><a class="nav-link" href="#skills">Skills</a></li>
                     <li><a class="nav-link" href="#experience">Experience</a></li>
+                    <li><a class="nav-link" href="#architecture">Architecture</a></li>
                     <li><a class="nav-link" href="#research">Research</a></li>
                     <li><a class="nav-link" href="#projects">Projects</a></li>
                     <li><a class="nav-link" href="#education">Education</a></li>
@@ -69,8 +74,6 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <canvas id="particles-canvas"></canvas>
-
         <div class="section-container hero-content">
             <div class="hero-text">
                 <div class="status-pill">
@@ -84,7 +87,7 @@
                 </h1>
 
                 <div class="hero-subtitle">
-                    <span>A passionate</span>
+                    <span>A dedicated</span>
                     <span class="typing-text"></span>
                 </div>
 
@@ -98,12 +101,12 @@
                         <i class="fas fa-arrow-right"></i>
                     </a>
                     <a href="https://drive.google.com/file/d/12prRfErEzHyoIRchJWTn1ZuISBNPTz5O/view?usp=drive_link" target="_blank" class="btn btn-secondary">
-                        <i class="fas fa-file-alt" style="color: var(--accent-indigo);"></i>
+                        <i class="fas fa-file-alt" style="color: var(--neon-indigo);"></i>
                         <span>Download CV</span>
                     </a>
                     <a href="https://github.com/srinunaikkatravath" target="_blank" class="btn btn-secondary">
                         <i class="fab fa-github"></i>
-                        <span>GitHub Repos (34+)</span>
+                        <span>GitHub (34+ Repos)</span>
                     </a>
                 </div>
 
@@ -128,12 +131,17 @@
 
             <div class="hero-visual">
                 <div class="hero-card-wrapper">
-                    <!-- 3D Avatar Frame with User's Uploaded Photo -->
-                    <div class="avatar-frame-3d">
-                        <img src="./assets/images/profile_user.png" alt="Srinu Naik Katravath" class="avatar-img">
+                    <!-- 3D Orbital Rings with Uploaded Photo -->
+                    <div class="orbit-ring-container">
+                        <div class="orbit-ring orbit-1"></div>
+                        <div class="orbit-ring orbit-2"></div>
+                        
+                        <div class="avatar-frame-3d">
+                            <img src="./assets/images/profile_user.png" alt="Srinu Naik Katravath" class="avatar-img">
+                        </div>
                     </div>
 
-                    <!-- 3D Floating Badges -->
+                    <!-- 3D Floating Tech Badges -->
                     <div class="floating-chip chip-top">
                         <div class="chip-icon ai">
                             <i class="fas fa-brain"></i>
@@ -153,34 +161,13 @@
                             <p>Java, Spring Boot, MySQL</p>
                         </div>
                     </div>
-
-                    <!-- 3D Core Software Developer Terminal Card -->
-                    <div class="developer-terminal-card">
-                        <div class="terminal-header">
-                            <div class="mac-buttons">
-                                <div class="mac-btn close"></div>
-                                <div class="mac-btn min"></div>
-                                <div class="mac-btn max"></div>
-                            </div>
-                            <div class="terminal-title">SrinuNaik.java</div>
-                            <div><i class="fas fa-code" style="color: #64748b;"></i></div>
-                        </div>
-                        <div class="terminal-body">
-                            <p><span class="t-keyword">public class</span> <span class="t-class">SrinuNaik</span> <span class="t-keyword">implements</span> <span class="t-class">FullStackEngineer</span> {</p>
-                            <p style="padding-left: 1.2rem;"><span class="t-var">String</span> role = <span class="t-string">"Full Stack & AI/ML Developer"</span>;</p>
-                            <p style="padding-left: 1.2rem;"><span class="t-var">String[]</span> core = {<span class="t-string">"Java"</span>, <span class="t-string">"Spring Boot"</span>, <span class="t-string">"FastAPI"</span>, <span class="t-string">"React"</span>};</p>
-                            <p style="padding-left: 1.2rem;"><span class="t-var">String[]</span> research = {<span class="t-string">"ThreatLens AI"</span>, <span class="t-string">"BioAgents RAG"</span>};</p>
-                            <p style="padding-left: 1.2rem;"><span class="t-comment">// 34+ GitHub repos & UGC published</span></p>
-                            <p>}</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Quick Stats Grid -->
-    <div style="max-width: 1240px; margin: -2rem auto 2rem; padding: 0 1.5rem; position: relative; z-index: 2;">
+    <div style="max-width: 1260px; margin: -2rem auto 2.5rem; padding: 0 1.5rem; position: relative; z-index: 2;">
         <div class="stats-grid">
             <div class="glass-card stat-card">
                 <div class="stat-number">M.Tech</div>
@@ -192,14 +179,128 @@
             </div>
             <div class="glass-card stat-card">
                 <div class="stat-number">10+</div>
-                <div class="stat-label">Oracle, AWS & Cisco Certifications</div>
+                <div class="stat-label">Oracle, AWS & Cisco Credentials</div>
             </div>
             <div class="glass-card stat-card">
                 <div class="stat-number">1</div>
-                <div class="stat-label">UGC-Listed Journal Publication (JNAO)</div>
+                <div class="stat-label">UGC-Listed Journal Paper (JNAO)</div>
             </div>
         </div>
     </div>
+
+    <!-- 3D DEVELOPER STUDIO & INTERACTIVE CLI TERMINAL -->
+    <section class="section-container" id="studio" style="padding-top: 2rem;">
+        <div class="section-header">
+            <div class="section-badge"><i class="fas fa-laptop-code"></i> Live Engineering Sandbox</div>
+            <h2 class="section-title">3D Developer <span class="gradient-text">Studio & CLI</span></h2>
+            <p class="section-desc">Explore syntax-highlighted code modules or execute live CLI terminal commands below.</p>
+        </div>
+
+        <div class="dev-studio-container">
+            <div class="dev-studio-topbar">
+                <div class="editor-tabs">
+                    <button class="tab-btn active" data-file="codeThreatLens">
+                        <i class="fab fa-python" style="color: #38bdf8;"></i> ThreatLensAI.py
+                    </button>
+                    <button class="tab-btn" data-file="codeNextAfield">
+                        <i class="fab fa-java" style="color: #ea580c;"></i> NextAfieldService.java
+                    </button>
+                    <button class="tab-btn" data-file="codeBioAgents">
+                        <i class="fas fa-brain" style="color: #c084fc;"></i> BioAgentsRAG.ts
+                    </button>
+                    <button class="tab-btn" data-file="codeArchitecture">
+                        <i class="fas fa-code-branch" style="color: #34d399;"></i> SystemArchitecture.json
+                    </button>
+                </div>
+                <div style="font-size: 0.8rem; color: #64748b;">
+                    <i class="fas fa-circle" style="color: #10b981; font-size: 0.6rem;"></i> Live Sandbox
+                </div>
+            </div>
+
+            <div class="dev-studio-split">
+                <!-- Code Viewer Panel -->
+                <div class="code-viewer-panel">
+                    <!-- ThreatLens.py -->
+                    <div class="code-display active" id="codeThreatLens">
+                        <div class="code-line"><span class="line-num">1</span><span class="line-content"><span class="c-kw">from</span> fastapi <span class="c-kw">import</span> FastAPI, UploadFile</span></div>
+                        <div class="code-line"><span class="line-num">2</span><span class="line-content"><span class="c-kw">import</span> yara, math, redis</span></div>
+                        <div class="code-line"><span class="line-num">3</span><span class="line-content"><span class="c-kw">from</span> sklearn.ensemble <span class="c-kw">import</span> RandomForestClassifier</span></div>
+                        <div class="code-line"><span class="line-num">4</span><span class="line-content">&nbsp;</span></div>
+                        <div class="code-line"><span class="line-num">5</span><span class="line-content"><span class="c-kw">class</span> <span class="c-class">ThreatLensEngine</span>:</span></div>
+                        <div class="code-line"><span class="line-num">6</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">def</span> <span class="c-func">__init__</span>(self, ruleset_path: str):</span></div>
+                        <div class="code-line"><span class="line-num">7</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.rules = yara.compile(filepath=ruleset_path)</span></div>
+                        <div class="code-line"><span class="line-num">8</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.classifier = RandomForestClassifier(n_estimators=100)</span></div>
+                        <div class="code-line"><span class="line-num">9</span><span class="line-content">&nbsp;</span></div>
+                        <div class="code-line"><span class="line-num">10</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">def</span> <span class="c-func">analyze_binary</span>(self, payload: bytes) -> dict:</span></div>
+                        <div class="code-line"><span class="line-num">11</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entropy = -sum((p := payload.count(b) / len(payload)) * math.log2(p) <span class="c-kw">for</span> b <span class="c-kw">in</span> set(payload))</span></div>
+                        <div class="code-line"><span class="line-num">12</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;matches = self.rules.match(data=payload)</span></div>
+                        <div class="code-line"><span class="line-num">13</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;verdict = self.classifier.predict([[entropy, len(matches)]])</span></div>
+                        <div class="code-line"><span class="line-num">14</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">return</span> {<span class="c-str">"risk_score"</span>: float(verdict[0]), <span class="c-str">"mitre_tag"</span>: <span class="c-str">"T1059.001"</span>}</span></div>
+                    </div>
+
+                    <!-- NextAfield.java -->
+                    <div class="code-display" id="codeNextAfield">
+                        <div class="code-line"><span class="line-num">1</span><span class="line-content"><span class="c-kw">package</span> com.nextafield.services;</span></div>
+                        <div class="code-line"><span class="line-num">2</span><span class="line-content"><span class="c-kw">import</span> org.springframework.stereotype.Service;</span></div>
+                        <div class="code-line"><span class="line-num">3</span><span class="line-content"><span class="c-kw">import</span> org.springframework.transaction.annotation.Transactional;</span></div>
+                        <div class="code-line"><span class="line-num">4</span><span class="line-content">&nbsp;</span></div>
+                        <div class="code-line"><span class="line-num">5</span><span class="line-content"><span class="c-kw">@Service</span></span></div>
+                        <div class="code-line"><span class="line-num">6</span><span class="line-content"><span class="c-kw">public class</span> <span class="c-class">CropPricingService</span> {</span></div>
+                        <div class="code-line"><span class="line-num">7</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">private final</span> CropRepository cropRepo;</span></div>
+                        <div class="code-line"><span class="line-num">8</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">private final</span> MessagingGateway messaging;</span></div>
+                        <div class="code-line"><span class="line-num">9</span><span class="line-content">&nbsp;</span></div>
+                        <div class="code-line"><span class="line-num">10</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">@Transactional</span>(readOnly = <span class="c-kw">true</span>)</span></div>
+                        <div class="code-line"><span class="line-num">11</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">public</span> MarketInsight <span class="c-func">getFarmerInsight</span>(Long farmerId) {</span></div>
+                        <div class="code-line"><span class="line-num">12</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var rates = cropRepo.findLatestMandatoryPrices();</span></div>
+                        <div class="code-line"><span class="line-num">13</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;messaging.sendWhatsAppAlert(farmerId, rates);</span></div>
+                        <div class="code-line"><span class="line-num">14</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">return new</span> MarketInsight(rates, Status.DELIVERED);</span></div>
+                        <div class="code-line"><span class="line-num">15</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;}</span></div>
+                        <div class="code-line"><span class="line-num">16</span><span class="line-content">}</span></div>
+                    </div>
+
+                    <!-- BioAgents.ts -->
+                    <div class="code-display" id="codeBioAgents">
+                        <div class="code-line"><span class="line-num">1</span><span class="line-content"><span class="c-kw">import</span> { FaissStore } <span class="c-kw">from</span> <span class="c-str">"@langchain/community/vectorstores/faiss"</span>;</span></div>
+                        <div class="code-line"><span class="line-num">2</span><span class="line-content"><span class="c-kw">import</span> { HuggingFaceInferenceEmbeddings } <span class="c-kw">from</span> <span class="c-str">"@langchain/community/embeddings/hf"</span>;</span></div>
+                        <div class="code-line"><span class="line-num">3</span><span class="line-content">&nbsp;</span></div>
+                        <div class="code-line"><span class="line-num">4</span><span class="line-content"><span class="c-kw">export class</span> <span class="c-class">BioAgentPipeline</span> {</span></div>
+                        <div class="code-line"><span class="line-num">5</span><span class="line-content">&nbsp;&nbsp;<span class="c-kw">async</span> <span class="c-func">retrieveBiomedicalContext</span>(query: string) {</span></div>
+                        <div class="code-line"><span class="line-num">6</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">const</span> vectorStore = <span class="c-kw">await</span> FaissStore.load(<span class="c-str">"./nfcore_index"</span>, embeddings);</span></div>
+                        <div class="code-line"><span class="line-num">7</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">const</span> docs = <span class="c-kw">await</span> vectorStore.similaritySearch(query, 4);</span></div>
+                        <div class="code-line"><span class="line-num">8</span><span class="line-content">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">return</span> docs.map(d => d.pageContent).join(<span class="c-str">"\n---\n"</span>);</span></div>
+                        <div class="code-line"><span class="line-num">9</span><span class="line-content">&nbsp;&nbsp;}</span></div>
+                        <div class="code-line"><span class="line-num">10</span><span class="line-content">}</span></div>
+                    </div>
+
+                    <!-- Architecture.json -->
+                    <div class="code-display" id="codeArchitecture">
+                        <div class="code-line"><span class="line-num">1</span><span class="line-content">{</span></div>
+                        <div class="code-line"><span class="line-num">2</span><span class="line-content">&nbsp;&nbsp;<span class="c-str">"author"</span>: <span class="c-str">"Srinu Naik Katravath"</span>,</span></div>
+                        <div class="code-line"><span class="line-num">3</span><span class="line-content">&nbsp;&nbsp;<span class="c-str">"education"</span>: <span class="c-str">"M.Tech (CSE) @ JNTUACEP"</span>,</span></div>
+                        <div class="code-line"><span class="line-num">4</span><span class="line-content">&nbsp;&nbsp;<span class="c-str">"internships"</span>: [<span class="c-str">"Infosys Springboard AI"</span>, <span class="c-str">"IIITDM Kurnool"</span>, <span class="c-str">"KodNest"</span>],</span></div>
+                        <div class="code-line"><span class="line-num">5</span><span class="line-content">&nbsp;&nbsp;<span class="c-str">"certifications"</span>: [<span class="c-str">"Oracle OCI 2025 AI"</span>, <span class="c-str">"Cisco OS"</span>, <span class="c-str">"AWS Cloud"</span>],</span></div>
+                        <div class="code-line"><span class="line-num">6</span><span class="line-content">&nbsp;&nbsp;<span class="c-str">"publication"</span>: <span class="c-str">"JNAO (UGC-Listed, Vol. 15, 2024)"</span>,</span></div>
+                        <div class="code-line"><span class="line-num">7</span><span class="line-content">&nbsp;&nbsp;<span class="c-str">"repositories_count"</span>: 34</span></div>
+                        <div class="code-line"><span class="line-num">8</span><span class="line-content">}</span></div>
+                    </div>
+                </div>
+
+                <!-- Interactive Terminal Panel -->
+                <div class="terminal-panel">
+                    <div class="terminal-logs" id="terminalLogs">
+                        <div class="t-output">Srinu Naik Katravath [Version 2.5.0-cse]</div>
+                        <div class="t-output">Type <span style="color: #00f5d4; font-weight: 700;">help</span> to see available commands or click code tabs on the left.</div>
+                        <div>&nbsp;</div>
+                    </div>
+
+                    <div class="terminal-input-row">
+                        <span class="t-prompt">visitor@srinunaik:~$</span>
+                        <input type="text" id="terminalInput" class="terminal-input" placeholder="type 'help', 'skills', 'projects'..." autocomplete="off">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section class="section-container" id="about">
@@ -625,6 +726,105 @@
         </div>
     </section>
 
+    <!-- SYSTEM ARCHITECTURE VISUALIZER SECTION -->
+    <section class="section-container" id="architecture">
+        <div class="section-header">
+            <div class="section-badge"><i class="fas fa-network-wired"></i> CSE System Design</div>
+            <h2 class="section-title">System Architecture <span class="gradient-text">& Dataflow</span></h2>
+            <p class="section-desc">Interactive architectural representations of high-throughput threat detection and multi-agent RAG pipelines.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 3rem;">
+            <!-- ThreatLens AI Architecture -->
+            <div class="glass-card" style="padding: 2.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <span class="project-category-tag">ThreatLens AI</span>
+                        <h3 style="font-size: 1.5rem; font-weight: 900; margin-top: 0.4rem;">Multi-Modal Threat Detection Pipeline</h3>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Redis Cache</span>
+                    </div>
+                </div>
+
+                <div class="pipeline-flow">
+                    <div class="glass-card pipeline-node">
+                        <div class="pipeline-node-icon" style="background: var(--neon-indigo);"><i class="fas fa-file-import"></i></div>
+                        <h4>1. Ingestion</h4>
+                        <p>PE Binaries, Audio, Video, URLs, Docs</p>
+                    </div>
+
+                    <div class="glass-card pipeline-node">
+                        <div class="pipeline-node-icon" style="background: var(--neon-purple);"><i class="fas fa-shield-virus"></i></div>
+                        <h4>2. YARA Scan</h4>
+                        <p>Pattern matching against signature database</p>
+                    </div>
+
+                    <div class="glass-card pipeline-node">
+                        <div class="pipeline-node-icon" style="background: var(--neon-pink);"><i class="fas fa-chart-area"></i></div>
+                        <h4>3. Shannon Entropy</h4>
+                        <p>Detect packed / obfuscated payloads</p>
+                    </div>
+
+                    <div class="glass-card pipeline-node">
+                        <div class="pipeline-node-icon" style="background: var(--neon-blue);"><i class="fas fa-brain"></i></div>
+                        <h4>4. Random Forest</h4>
+                        <p>Ensemble ML classification & verdict</p>
+                    </div>
+
+                    <div class="glass-card pipeline-node">
+                        <div class="pipeline-node-icon" style="background: var(--neon-emerald);"><i class="fas fa-robot"></i></div>
+                        <h4>5. AI SOC Copilot</h4>
+                        <p>MITRE ATT&CK & Auto-containment Bash/PS</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BioAgents Architecture -->
+            <div class="glass-card" style="padding: 2.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <span class="project-category-tag" style="background: rgba(0, 245, 212, 0.12); color: var(--neon-cyan);">BioAgents Reproduction</span>
+                        <h3 style="font-size: 1.5rem; font-weight: 900; margin-top: 0.4rem;">Multi-Agent Bioinformatics QA System</h3>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <span class="tech-tag">QLoRA</span>
+                        <span class="tech-tag">Phi-3-mini</span>
+                        <span class="tech-tag">FAISS Index</span>
+                    </div>
+                </div>
+
+                <div class="pipeline-flow">
+                    <div class="glass-card pipeline-node">
+                        <div class="pipeline-node-icon" style="background: #0284c7;"><i class="fas fa-database"></i></div>
+                        <h4>1. Biostars QA</h4>
+                        <p>10,203 curated domain QA dataset</p>
+                    </div>
+
+                    <div class="glass-card pipeline-node">
+                        <div class="pipeline-node-icon" style="background: #7c3aed;"><i class="fas fa-sliders"></i></div>
+                        <h4>2. QLoRA Tuning</h4>
+                        <p>Fine-tuned Phi-3-mini 3.82B parameters</p>
+                    </div>
+
+                    <div class="glass-card pipeline-node">
+                        <div class="pipeline-node-icon" style="background: #ec4899;"><i class="fas fa-layer-group"></i></div>
+                        <h4>3. FAISS RAG</h4>
+                        <p>Dense retrieval over 1,291 nf-core docs</p>
+                    </div>
+
+                    <div class="glass-card pipeline-node">
+                        <div class="pipeline-node-icon" style="background: #10b981;"><i class="fas fa-trophy"></i></div>
+                        <h4>4. Evaluation</h4>
+                        <p>18× ROUGE-1 score improvement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Research & Publications Section -->
     <section class="section-container" id="research">
         <div class="section-header">
@@ -651,7 +851,7 @@
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">PyAutoGUI</span>
                     </div>
-                    <a href="https://github.com/srinunaikkatravath/Gesture-Controlled-Virtual-Mouse" target="_blank" class="btn btn-outline-gradient" style="padding: 0.5rem 1.15rem; font-size: 0.85rem;">
+                    <a href="https://github.com/srinunaikkatravath/Gesture-Controlled-Virtual-Mouse" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1.15rem; font-size: 0.85rem;">
                         <i class="fab fa-github"></i> Repository
                     </a>
                 </div>
@@ -660,7 +860,7 @@
             <!-- BioAgents Reproduction -->
             <div class="glass-card research-card">
                 <div>
-                    <div class="pub-badge" style="background: rgba(2, 132, 199, 0.1); color: var(--accent-cyan);"><i class="fas fa-flask"></i> Postgraduate Research Internship</div>
+                    <div class="pub-badge" style="background: rgba(2, 132, 199, 0.1); color: var(--neon-blue);"><i class="fas fa-flask"></i> Postgraduate Research Internship</div>
                     <h3 class="research-title">BioAgents Reproduction — Multi-Agent Bioinformatics QA System</h3>
                     <div class="research-venue">IIITDM Kurnool · Dept. of CSE (Mehandru et al., Scientific Reports 2025 Reproduction)</div>
                     <p class="research-desc">
@@ -674,7 +874,7 @@
                         <span class="tech-tag">FAISS VectorDB</span>
                         <span class="tech-tag">HuggingFace</span>
                     </div>
-                    <a href="https://github.com/srinunaikkatravath/bioagents" target="_blank" class="btn btn-outline-gradient" style="padding: 0.5rem 1.15rem; font-size: 0.85rem;">
+                    <a href="https://github.com/srinunaikkatravath/bioagents" target="_blank" class="btn btn-secondary" style="padding: 0.5rem 1.15rem; font-size: 0.85rem;">
                         <i class="fab fa-github"></i> Repository
                     </a>
                 </div>
@@ -715,7 +915,7 @@
                         Multi-modal malware analysis platform analyzing PE binaries, audio, video, and web content via YARA rules, Shannon entropy, and Random Forest classifier with an AI SOC Copilot for auto-generating containment scripts.
                     </p>
                     <div class="project-metrics">
-                        <i class="fas fa-shield-alt" style="color: var(--accent-indigo);"></i>
+                        <i class="fas fa-shield-alt" style="color: var(--neon-indigo);"></i>
                         <span>MITRE ATT&CK mapping + automated Bash/PS mitigation scripts</span>
                     </div>
                 </div>
@@ -747,7 +947,7 @@
                         Digital platform empowering farmers with real-time market price tracking, crop insurance, yield risk calculations, and logistics coordination delivered via SMS and WhatsApp notifications.
                     </p>
                     <div class="project-metrics">
-                        <i class="fas fa-users" style="color: var(--accent-emerald);"></i>
+                        <i class="fas fa-users" style="color: var(--neon-emerald);"></i>
                         <span>4 core modules with Spring Boot REST backend, targeting 100+ AP farmers</span>
                     </div>
                 </div>
@@ -778,7 +978,7 @@
                         Webcam-based accessibility software replacing the physical mouse using hand gestures. Features real-time landmark recognition supporting 7 commands including click, scroll, drag, and volume control.
                     </p>
                     <div class="project-metrics">
-                        <i class="fas fa-award" style="color: var(--accent-amber);"></i>
+                        <i class="fas fa-award" style="color: var(--neon-amber);"></i>
                         <span>Published in JNAO (Vol. 15, Issue 1, 2024, UGC-Listed)</span>
                     </div>
                 </div>
@@ -808,7 +1008,7 @@
                         Multi-agent bioinformatics research system reproducing Scientific Reports 2025. Fine-tuned Phi-3-mini on 10k+ Biostars QA pairs and integrated FAISS RAG across 1,291 documentation pages.
                     </p>
                     <div class="project-metrics">
-                        <i class="fas fa-rocket" style="color: var(--accent-pink);"></i>
+                        <i class="fas fa-rocket" style="color: var(--neon-pink);"></i>
                         <span>18× ROUGE-1 benchmark gain over baseline foundational model</span>
                     </div>
                 </div>
@@ -839,7 +1039,7 @@
                         Full-stack academic portal for educational institutions to automate attendance logging, semester result compilation, and administrative grading workflows with role-based access.
                     </p>
                     <div class="project-metrics">
-                        <i class="fas fa-clock" style="color: var(--accent-indigo);"></i>
+                        <i class="fas fa-clock" style="color: var(--neon-indigo);"></i>
                         <span>Manages 200+ student records; reduced administrative effort by ~40%</span>
                     </div>
                 </div>
@@ -870,7 +1070,7 @@
                         Computer vision model and spatial depth estimator for unmanned aerial vehicles (UAVs) to navigate indoor environments and calculate collision-free trajectories.
                     </p>
                     <div class="project-metrics">
-                        <i class="fas fa-shield-alt" style="color: var(--accent-emerald);"></i>
+                        <i class="fas fa-shield-alt" style="color: var(--neon-emerald);"></i>
                         <span>Real-time spatial detection & collision boundary calculation</span>
                     </div>
                 </div>
@@ -900,7 +1100,7 @@
                         High-performance autonomous vehicle navigation engine written in C++ implementing lane detection, vehicle trajectory prediction, and collision mitigation loops.
                     </p>
                     <div class="project-metrics">
-                        <i class="fas fa-tachometer-alt" style="color: var(--accent-cyan);"></i>
+                        <i class="fas fa-tachometer-alt" style="color: var(--neon-blue);"></i>
                         <span>Low-latency C++ control loop and algorithmic pathfinding</span>
                     </div>
                 </div>
@@ -929,7 +1129,7 @@
                         Machine learning pipeline utilizing anomaly detection, feature engineering, and ensemble classification on highly imbalanced financial transaction records.
                     </p>
                     <div class="project-metrics">
-                        <i class="fas fa-check" style="color: var(--accent-emerald);"></i>
+                        <i class="fas fa-check" style="color: var(--neon-emerald);"></i>
                         <span>Trained on skewed financial datasets with high precision recall</span>
                     </div>
                 </div>
@@ -959,7 +1159,7 @@
                         Arduino-powered automated irrigation system utilizing soil moisture and temperature sensors to trigger dynamic water distribution, conserving water resources.
                     </p>
                     <div class="project-metrics">
-                        <i class="fas fa-tint" style="color: var(--accent-cyan);"></i>
+                        <i class="fas fa-tint" style="color: var(--neon-cyan);"></i>
                         <span>Sensor-driven water conservation with automated pump triggers</span>
                     </div>
                 </div>
@@ -989,7 +1189,7 @@
                         Browser-based interactive IDE providing live multi-language syntax highlighting, live sandbox preview, and code export capabilities.
                     </p>
                     <div class="project-metrics">
-                        <i class="fas fa-bolt" style="color: var(--accent-amber);"></i>
+                        <i class="fas fa-bolt" style="color: var(--neon-amber);"></i>
                         <span>Instant client-side code interpretation & live preview</span>
                     </div>
                 </div>
@@ -1023,7 +1223,7 @@
 
         <div class="education-grid">
             <!-- M.Tech -->
-            <div class="glass-card edu-card" style="border-color: rgba(79, 70, 229, 0.4); box-shadow: 0 12px 30px rgba(79, 70, 229, 0.12);">
+            <div class="glass-card edu-card" style="border-color: rgba(79, 70, 229, 0.4); box-shadow: 0 12px 30px rgba(79, 70, 229, 0.15);">
                 <div class="edu-icon-wrap"><i class="fas fa-user-graduate"></i></div>
                 <div class="edu-duration">Oct 2025 – Present</div>
                 <h3 class="edu-degree">M.Tech in Computer Science & Engineering</h3>
@@ -1039,7 +1239,7 @@
                 <h3 class="edu-degree">B.Tech in Computer Science & Engineering</h3>
                 <div class="edu-institution">Vignan's Institute of Information Technology (Autonomous)</div>
                 <div class="edu-location"><i class="fas fa-map-marker-alt"></i> Visakhapatnam, Andhra Pradesh</div>
-                <span class="edu-status" style="background: rgba(37, 99, 235, 0.12); color: #2563eb;"><i class="fas fa-check"></i> Completed / Graduated</span>
+                <span class="edu-status" style="background: rgba(2, 132, 199, 0.15); color: #0284c7;"><i class="fas fa-check"></i> Completed / Graduated</span>
             </div>
 
             <!-- Intermediate -->
@@ -1049,17 +1249,17 @@
                 <h3 class="edu-degree">Intermediate – MPC (Maths, Physics, Chem)</h3>
                 <div class="edu-institution">Sri Chaitanya Junior College · BIEAP</div>
                 <div class="edu-location"><i class="fas fa-map-marker-alt"></i> Guntur, Andhra Pradesh</div>
-                <span class="edu-status" style="background: rgba(37, 99, 235, 0.12); color: #2563eb;"><i class="fas fa-check"></i> Completed</span>
+                <span class="edu-status" style="background: rgba(2, 132, 199, 0.15); color: #0284c7;"><i class="fas fa-check"></i> Completed</span>
             </div>
 
             <!-- SSC -->
             <div class="glass-card edu-card">
-                <div class="edu-icon-wrap" style="background: var(--grad-amber);"><i class="fas fa-school"></i></div>
+                <div class="edu-icon-wrap" style="background: var(--grad-sunset);"><i class="fas fa-school"></i></div>
                 <div class="edu-duration">Jun 2017 – Mar 2018</div>
                 <h3 class="edu-degree">Secondary School Certificate (SSC / 10th)</h3>
                 <div class="edu-institution">Bhashyam High School · APSSC</div>
                 <div class="edu-location"><i class="fas fa-map-marker-alt"></i> Guntur, Andhra Pradesh</div>
-                <span class="edu-status" style="background: rgba(37, 99, 235, 0.12); color: #2563eb;"><i class="fas fa-check"></i> Completed</span>
+                <span class="edu-status" style="background: rgba(2, 132, 199, 0.15); color: #0284c7;"><i class="fas fa-check"></i> Completed</span>
             </div>
         </div>
     </section>
@@ -1287,7 +1487,7 @@
         <div class="contact-grid">
             <div class="glass-card contact-info-card">
                 <div>
-                    <h3 style="font-size: 1.6rem; margin-bottom: 0.85rem;">Let's build something extraordinary</h3>
+                    <h3 style="font-size: 1.65rem; margin-bottom: 0.85rem;">Let's build something extraordinary</h3>
                     <p style="color: var(--text-secondary); line-height: 1.75;">
                         I am actively open to Full Stack Engineering, AI/ML Developer roles, and collaborative research initiatives. Feel free to drop a message or reach out across my profiles.
                     </p>
@@ -1372,7 +1572,7 @@
             <div class="footer-brand">
                 <div class="logo" style="margin-bottom: 0.85rem;">
                     <span>Srinu Naik Katravath</span>
-                    <span class="logo-badge">DEV.AI</span>
+                    <span class="logo-badge">CSE.AI</span>
                 </div>
                 <p>
                     Full Stack Developer & UGC-published AI/ML researcher pursuing M.Tech (CSE) at JNTUACEP. Building robust enterprise systems & modern intelligent applications.
@@ -1383,9 +1583,11 @@
                 <h4>Quick Navigation</h4>
                 <ul>
                     <li><a href="#home">Home</a></li>
+                    <li><a href="#studio">3D Developer Studio</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#experience">Experience</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
                     <li><a href="#research">Research & Papers</a></li>
                     <li><a href="#projects">Featured Projects</a></li>
                     <li><a href="#education">Education</a></li>
@@ -1395,17 +1597,17 @@
             <div class="footer-contact">
                 <h4>Contact & Socials</h4>
                 <ul>
-                    <li><a href="mailto:katravath11143@gmail.com"><i class="fas fa-envelope" style="color: var(--accent-indigo); margin-right: 0.5rem;"></i> katravath11143@gmail.com</a></li>
-                    <li><a href="tel:+919618231306"><i class="fas fa-phone-alt" style="color: var(--accent-indigo); margin-right: 0.5rem;"></i> +91 9618231306</a></li>
-                    <li><a href="https://github.com/srinunaikkatravath" target="_blank"><i class="fab fa-github" style="color: var(--accent-indigo); margin-right: 0.5rem;"></i> github.com/srinunaikkatravath</a></li>
-                    <li><a href="https://www.linkedin.com/in/srinunaikkatravath/" target="_blank"><i class="fab fa-linkedin" style="color: var(--accent-indigo); margin-right: 0.5rem;"></i> linkedin.com/in/srinunaikkatravath</a></li>
+                    <li><a href="mailto:katravath11143@gmail.com"><i class="fas fa-envelope" style="color: var(--neon-indigo); margin-right: 0.5rem;"></i> katravath11143@gmail.com</a></li>
+                    <li><a href="tel:+919618231306"><i class="fas fa-phone-alt" style="color: var(--neon-indigo); margin-right: 0.5rem;"></i> +91 9618231306</a></li>
+                    <li><a href="https://github.com/srinunaikkatravath" target="_blank"><i class="fab fa-github" style="color: var(--neon-indigo); margin-right: 0.5rem;"></i> github.com/srinunaikkatravath</a></li>
+                    <li><a href="https://www.linkedin.com/in/srinunaikkatravath/" target="_blank"><i class="fab fa-linkedin" style="color: var(--neon-indigo); margin-right: 0.5rem;"></i> linkedin.com/in/srinunaikkatravath</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
             <p>&copy; <span id="currentYear"></span> Srinu Naik Katravath. All rights reserved.</p>
-            <p>Crafted with <i class="fas fa-heart" style="color: #ec4899;"></i> for modern developer aesthetics and performance.</p>
+            <p>Crafted with <i class="fas fa-heart" style="color: #ff007a;"></i> for 3D animated CSE performance.</p>
         </div>
     </footer>
 
@@ -1413,6 +1615,9 @@
     <a href="#home" class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
         <i class="fas fa-arrow-up"></i>
     </a>
+
+    <!-- Three.js 3D Engine CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
     <!-- Typed.js for dynamic typing header -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>

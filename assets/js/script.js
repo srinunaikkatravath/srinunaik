@@ -1,4 +1,7 @@
-// Main Portfolio Script for Srinu Naik Katravath
+// ==========================================================================
+// SRINU NAIK KATRAVATH — FULL 3D CSE DEVELOPER PORTFOLIO ENGINE
+// ==========================================================================
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Current Year
     const yearSpan = document.getElementById('currentYear');
@@ -6,12 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    // 2. Theme Toggle (Light / Dark)
+    // 2. Theme Management (Colorful Light by default, with dark toggle)
     const themeToggleBtn = document.getElementById('themeToggle');
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     const savedTheme = localStorage.getItem('srinu_theme');
 
-    // Default to light theme as requested, or saved preference
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-theme');
         if (themeToggleBtn) themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
@@ -26,10 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const isDark = document.body.classList.contains('dark-theme');
             localStorage.setItem('srinu_theme', isDark ? 'dark' : 'light');
             themeToggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            updateThreeColors(isDark);
         });
     }
 
-    // 3. Mobile Menu Toggle
+    // 3. Mobile Navigation Menu
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
 
@@ -43,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Close menu when clicking nav links
         const navLinks = navMenu.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. Scroll to Top Button
+    // 4. Scroll to Top
     const scrollTopBtn = document.getElementById('scrollTopBtn');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
@@ -70,14 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (scrollTopBtn) {
         scrollTopBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
-    // 5. Scroll Spy for Active Nav Link
+    // 5. Scroll Spy Navigation Highlight
     const sections = document.querySelectorAll('section[id]');
     window.addEventListener('scroll', () => {
         const scrollY = window.pageYOffset;
@@ -95,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 6. Typed.js Dynamic Typing Animation
+    // 6. Typed.js Initialization
     if (typeof Typed !== 'undefined' && document.querySelector('.typing-text')) {
         new Typed('.typing-text', {
             strings: [
@@ -134,19 +132,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 8. 3D Card Tilt on Mouse Move
-    const tiltCards = document.querySelectorAll('.stat-card, .project-card, .cert-card, .research-card');
+    // 8. 3D Card Specular Hover & Perspective Tilt
+    const tiltCards = document.querySelectorAll('.glass-card');
     tiltCards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
+
+            // Update specular highlight position
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+
+            // 3D Tilt calculation
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -5;
-            const rotateY = ((x - centerX) / centerX) * 5;
+            const rotateX = ((y - centerY) / centerY) * -6;
+            const rotateY = ((x - centerX) / centerX) * 6;
 
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
         });
 
         card.addEventListener('mouseleave', () => {
@@ -154,7 +158,89 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 9. Contact Form Handling
+    // 9. Interactive 3D Developer Studio Code Tabs
+    const studioTabs = document.querySelectorAll('.tab-btn');
+    const codeDisplays = document.querySelectorAll('.code-display');
+
+    studioTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            studioTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const fileTarget = tab.getAttribute('data-file');
+            codeDisplays.forEach(display => {
+                if (display.getAttribute('id') === fileTarget) {
+                    display.classList.add('active');
+                } else {
+                    display.classList.remove('active');
+                }
+            });
+        });
+    });
+
+    // 10. Executable Developer CLI Terminal
+    const terminalInput = document.getElementById('terminalInput');
+    const terminalLogs = document.getElementById('terminalLogs');
+
+    if (terminalInput && terminalLogs) {
+        terminalInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const command = terminalInput.value.trim().toLowerCase();
+                terminalInput.value = '';
+
+                // Append user input
+                appendTerminalLine(`visitor@srinunaik:~$ ${command}`, 't-prompt');
+
+                // Execute command
+                switch (command) {
+                    case 'help':
+                        appendTerminalLine('Available commands:\n  whoami      - Display developer bio & role\n  skills      - View technical arsenal\n  projects    - List top featured projects\n  exp         - View work and research experience\n  pub         - View UGC-listed publication\n  contact     - View phone, email & socials\n  clear       - Clear terminal logs', 't-output');
+                        break;
+                    case 'whoami':
+                    case 'about':
+                        appendTerminalLine('Srinu Naik Katravath\nFull Stack Developer & AI/ML Researcher\nPursuing M.Tech (CSE) @ JNTUACEP\nLocation: Andhra Pradesh, India', 't-output');
+                        break;
+                    case 'skills':
+                        appendTerminalLine('Core Stack:\n• Java, Spring Boot, REST APIs, MySQL, JDBC\n• Python, FastAPI, Next.js 14, PyTorch\n• QLoRA, FAISS, MediaPipe, OpenCV\n• Oracle Cloud (OCI AI), AWS Cloud Essentials', 't-output');
+                        break;
+                    case 'projects':
+                        appendTerminalLine('Featured Projects:\n1. ThreatLens AI (Multi-modal threat detection)\n2. Next Afield (Agri-tech digital platform)\n3. BioAgents (Bioinformatics QA system)\n4. Gesture Controller Virtual Mouse (UGC Published)\n5. Student Attendance Management System\n(34+ public repos available on GitHub)', 't-output');
+                        break;
+                    case 'exp':
+                        appendTerminalLine('Experience Timeline:\n• AI Intern @ Infosys Springboard (ThreatLens AI)\n• PG Research Intern @ IIITDM Kurnool (BioAgents)\n• Full Stack Trainee @ KodNest (500+ hrs, Java/Spring)\n• Founder & CEO @ Next Afield (Agro-platform)', 't-output');
+                        break;
+                    case 'pub':
+                    case 'publication':
+                    case 'research':
+                        appendTerminalLine('Research Publication:\nGesture Controller Virtual Mouse\nJournal of Nonlinear Analysis and Optimization (JNAO)\nVol. 15, Issue 1, 2024 · ISSN: 1906-9685 · UGC-Listed', 't-output');
+                        break;
+                    case 'contact':
+                        appendTerminalLine('Contact Coordinates:\n• Email: katravath11143@gmail.com\n• Phone: +91 9618231306\n• LinkedIn: linkedin.com/in/srinunaikkatravath\n• GitHub: github.com/srinunaikkatravath', 't-output');
+                        break;
+                    case 'clear':
+                        terminalLogs.innerHTML = '';
+                        break;
+                    case '':
+                        break;
+                    default:
+                        appendTerminalLine(`Command not found: "${command}". Type "help" for a list of valid commands.`, 't-output');
+                        break;
+                }
+
+                terminalLogs.scrollTop = terminalLogs.scrollHeight;
+            }
+        });
+    }
+
+    function appendTerminalLine(text, className) {
+        const line = document.createElement('div');
+        line.className = className;
+        line.textContent = text;
+        line.style.whiteSpace = 'pre-wrap';
+        terminalLogs.appendChild(line);
+    }
+
+    // 11. Contact Form AJAX Submission
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('formStatus');
     const submitBtn = document.getElementById('submitBtn');
@@ -172,24 +258,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 const response = await fetch(contactForm.action, {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 });
 
                 if (response.ok) {
-                    formStatus.innerHTML = '<span style="color: #059669; font-weight: 700;"><i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.</span>';
+                    formStatus.innerHTML = '<span style="color: #059669; font-weight: 800;"><i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.</span>';
                     contactForm.reset();
                 } else {
-                    const data = await response.json();
-                    if (data && data.errors) {
-                        formStatus.innerHTML = `<span style="color: #ef4444;"><i class="fas fa-exclamation-circle"></i> ${data.errors.map(err => err.message).join(', ')}</span>`;
-                    } else {
-                        formStatus.innerHTML = '<span style="color: #ef4444;"><i class="fas fa-exclamation-circle"></i> Oops! Something went wrong. Please email directly at katravath11143@gmail.com</span>';
-                    }
+                    formStatus.innerHTML = '<span style="color: #ef4444;"><i class="fas fa-exclamation-circle"></i> Submission failed. Please email katravath11143@gmail.com directly.</span>';
                 }
             } catch (err) {
-                formStatus.innerHTML = '<span style="color: #ef4444;"><i class="fas fa-exclamation-circle"></i> Network error. Please email directly at katravath11143@gmail.com</span>';
+                formStatus.innerHTML = '<span style="color: #ef4444;"><i class="fas fa-exclamation-circle"></i> Network error. Please email katravath11143@gmail.com directly.</span>';
             } finally {
                 submitBtn.innerHTML = submitBtnOriginalHTML;
                 submitBtn.disabled = false;
@@ -197,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 10. Tab Focus Visibility Change
+    // 12. Tab Focus Visibility Change
     document.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'visible') {
             document.title = 'Srinu Naik Katravath | Full Stack Developer & AI/ML Researcher';
@@ -206,84 +285,138 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 11. Interactive Colorful Particle Canvas Background
-    const canvas = document.getElementById('particles-canvas');
-    if (canvas) {
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        const particleCount = 40;
+    // ==========================================================================
+    // 13. THREE.JS 3D WEBGL INTERACTIVE CYBER BACKGROUND
+    // ==========================================================================
+    let scene, camera, renderer, cyberMesh, torusMesh, particleSystem;
+    let targetRotationX = 0, targetRotationY = 0;
+    let mouseX = 0, mouseY = 0;
+    const canvasContainer = document.getElementById('three-canvas-container');
 
-        function resizeCanvas() {
-            canvas.width = canvas.parentElement.offsetWidth;
-            canvas.height = canvas.parentElement.offsetHeight;
+    if (typeof THREE !== 'undefined' && canvasContainer) {
+        initThreeJS();
+    }
+
+    function initThreeJS() {
+        scene = new THREE.Scene();
+
+        camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 28;
+
+        renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        canvasContainer.appendChild(renderer.domElement);
+
+        // 3D Ambient & Directional Neon Lights
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
+        scene.add(ambientLight);
+
+        const pointLight1 = new THREE.PointLight(0x4f46e5, 2, 80);
+        pointLight1.position.set(20, 20, 20);
+        scene.add(pointLight1);
+
+        const pointLight2 = new THREE.PointLight(0x00f5d4, 1.8, 80);
+        pointLight2.position.set(-20, -20, 15);
+        scene.add(pointLight2);
+
+        // Central Cyber Geometric Mesh (Icosahedron Wireframe with vertices)
+        const geometry = new THREE.IcosahedronGeometry(11, 2);
+        const material = new THREE.MeshStandardMaterial({
+            color: 0x4f46e5,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.28
+        });
+        cyberMesh = new THREE.Mesh(geometry, material);
+        cyberMesh.position.set(16, 2, -5);
+        scene.add(cyberMesh);
+
+        // Surrounding 3D Torus Ring
+        const torusGeo = new THREE.TorusGeometry(14, 0.35, 16, 100);
+        const torusMat = new THREE.MeshStandardMaterial({
+            color: 0x00f5d4,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.35
+        });
+        torusMesh = new THREE.Mesh(torusGeo, torusMat);
+        torusMesh.position.set(16, 2, -5);
+        scene.add(torusMesh);
+
+        // 3D Neural Particle Constellation
+        const particleCount = 280;
+        const particleGeo = new THREE.BufferGeometry();
+        const positions = new Float32Array(particleCount * 3);
+
+        for (let i = 0; i < particleCount * 3; i += 3) {
+            positions[i] = (Math.random() - 0.5) * 90;
+            positions[i + 1] = (Math.random() - 0.5) * 70;
+            positions[i + 2] = (Math.random() - 0.5) * 50;
         }
 
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
+        particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.radius = Math.random() * 2 + 1;
-                const colors = ['rgba(79, 70, 229, ', 'rgba(236, 72, 153, ', 'rgba(2, 132, 199, ', 'rgba(16, 185, 129, '];
-                this.color = colors[Math.floor(Math.random() * colors.length)];
-                this.alpha = Math.random() * 0.45 + 0.2;
-            }
+        const particleMat = new THREE.PointsMaterial({
+            color: 0x7928ca,
+            size: 0.55,
+            transparent: true,
+            opacity: 0.6
+        });
 
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
+        particleSystem = new THREE.Points(particleGeo, particleMat);
+        scene.add(particleSystem);
 
-                if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
-                if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
-            }
+        // Mouse Parallax Listener
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX - window.innerWidth / 2) * 0.0008;
+            mouseY = (e.clientY - window.innerHeight / 2) * 0.0008;
+        });
 
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = this.color + this.alpha + ')';
-                ctx.fill();
-            }
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        animateThree();
+    }
+
+    function animateThree() {
+        requestAnimationFrame(animateThree);
+
+        if (cyberMesh && torusMesh) {
+            cyberMesh.rotation.x += 0.003;
+            cyberMesh.rotation.y += 0.004;
+
+            torusMesh.rotation.x += 0.002;
+            torusMesh.rotation.y += 0.005;
+
+            // Smooth mouse follow easing
+            cyberMesh.rotation.x += (mouseY - cyberMesh.rotation.x) * 0.05;
+            cyberMesh.rotation.y += (mouseX - cyberMesh.rotation.y) * 0.05;
         }
 
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
+        if (particleSystem) {
+            particleSystem.rotation.y += 0.0006;
+            particleSystem.rotation.x += 0.0004;
         }
 
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        renderer.render(scene, camera);
+    }
 
-            const isDark = document.body.classList.contains('dark-theme');
-            const strokeColor = isDark ? 'rgba(0, 242, 254, ' : 'rgba(79, 70, 229, ';
-
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-
-                    if (dist < 120) {
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = strokeColor + (0.12 * (1 - dist / 120)) + ')';
-                        ctx.lineWidth = 0.8;
-                        ctx.stroke();
-                    }
-                }
-            }
-
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
-
-            requestAnimationFrame(animate);
+    function updateThreeColors(isDark) {
+        if (!cyberMesh) return;
+        if (isDark) {
+            cyberMesh.material.color.setHex(0x00f5d4);
+            cyberMesh.material.opacity = 0.35;
+            torusMesh.material.color.setHex(0x7928ca);
+            particleSystem.material.color.setHex(0x00f5d4);
+        } else {
+            cyberMesh.material.color.setHex(0x4f46e5);
+            cyberMesh.material.opacity = 0.28;
+            torusMesh.material.color.setHex(0x00f5d4);
+            particleSystem.material.color.setHex(0x7928ca);
         }
-
-        animate();
     }
 });
