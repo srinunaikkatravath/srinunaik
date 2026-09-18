@@ -4,172 +4,230 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link id='favicon' rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-png">
-
-    <title>Experience | Portfolio Srinu Naik</title>
+    <title>Experience & Timeline | Srinu Naik Katravath</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link id="favicon" rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-png">
 </head>
-<body oncontextmenu="return false">
+<body>
 
-<!-- navbar starts -->
-<header>
-  <a href="/" class="logo"></i> Srinu Naik</a>
+    <!-- Header & Navigation -->
+    <header id="navbarHeader">
+        <div class="nav-container">
+            <a href="../#home" class="logo">
+                <span>Srinu Naik</span>
+                <div class="logo-dot"></div>
+            </a>
 
-  <div id="menu" class="fas fa-bars"></div>
-  <nav class="navbar">
-      <ul>
-      <li><a class="active" href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-      </ul>
-  </nav>
-</header>
-<!-- navbar ends -->
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a class="nav-link" href="../#home">Home</a></li>
+                    <li><a class="nav-link" href="../#about">About</a></li>
+                    <li><a class="nav-link" href="../#skills">Skills</a></li>
+                    <li><a class="nav-link active" href="../#experience">Experience</a></li>
+                    <li><a class="nav-link" href="../#research">Research</a></li>
+                    <li><a class="nav-link" href="../#projects">Projects</a></li>
+                    <li><a class="nav-link" href="../#contact">Contact</a></li>
+                </ul>
+            </nav>
 
-<!-- experience section starts -->
-<section class="experience" id="experience">
-
-  <h2 class="heading"><i class="fas fa-briefcase"></i> Experience</h2>
-  <div class="quote">
-      <span>every experience in your life is being orchestrated to teach you something you need to know to move forward.</span>
-  </div>
-
-  <div class="timeline">
-
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Next Afield | Self Employed</h2>
+            <div class="nav-actions">
+                <a href="../#contact" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;">Let's Talk</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-        <div class="desc">
-            <h3>Founder and CEO</h3>
-            <p>Oct 2023 - present</p>
+    </header>
+
+    <main style="padding-top: 5rem;">
+        <section class="section-container">
+            <div class="section-header">
+                <div class="section-badge"><i class="fas fa-briefcase"></i> Track Record</div>
+                <h1 class="section-title">Work & Research <span class="gradient-text">Experience</span></h1>
+                <p class="section-desc">A detailed chronological overview of industry internships, research fellowships, startup leadership, and enterprise training.</p>
+            </div>
+
+            <div class="timeline">
+                <!-- ThreatLens AI Infosys Springboard -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-card">
+                        <div class="timeline-header">
+                            <span class="timeline-period">Jul 2026 – Sep 2026</span>
+                            <h3 class="timeline-title">AI Intern — ThreatLens AI</h3>
+                            <div class="timeline-company"><i class="fas fa-building"></i> Infosys Springboard Internship 7.0 (Artificial Intelligence) · Remote</div>
+                        </div>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Architected <strong>ThreatLens AI</strong>, a multi-modal threat detection platform (Python, FastAPI, Next.js 14) analyzing PE binaries, audio, video, web content, and documents via YARA signature matching, Shannon entropy analysis, and a Random Forest classifier.</li>
+                                <li>Designed a real-time risk-scoring engine and an <strong>AI SOC Copilot</strong> mapping findings to the MITRE ATT&CK framework and auto-generating PowerShell/Bash containment scripts.</li>
+                                <li>Engineered a PostgreSQL/MongoDB/Redis backend with role-based access control across four user roles (Analyst, SOC Team, Admin, Researcher) and integrated live threat-intelligence feeds (AlienVault OTX, URLhaus, AbuseIPDB, CISA KEV).</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Next.js 14</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">YARA</span>
+                            <span class="tech-tag">MITRE ATT&CK</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IIITDM Kurnool BioAgents -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-card">
+                        <div class="timeline-header">
+                            <span class="timeline-period">May 2026 – Jul 2026</span>
+                            <h3 class="timeline-title">Postgraduate Research Intern — BioAgents</h3>
+                            <div class="timeline-company"><i class="fas fa-university"></i> IIITDM Kurnool · Dept. of CSE (Under Dr. Chandra Mohan D)</div>
+                        </div>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Reproduced a 3-agent bioinformatics QA system (Mehandru et al., Scientific Reports 2025) as a postgraduate research intern.</li>
+                                <li>Fine-tuned <strong>Phi-3-mini (3.82B params)</strong> with QLoRA on 10,203 Biostars QA pairs.</li>
+                                <li>Built a FAISS-based RAG pipeline over 1,291 nf-core documentation pages, achieving an <strong>18× ROUGE-1 improvement</strong> over baseline benchmarks.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tech-tags">
+                            <span class="tech-tag">HuggingFace</span>
+                            <span class="tech-tag">Phi-3-mini</span>
+                            <span class="tech-tag">QLoRA</span>
+                            <span class="tech-tag">FAISS</span>
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">Google Colab</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KodNest Technologies -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-card">
+                        <div class="timeline-header">
+                            <span class="timeline-period">Jun 2024 – Dec 2024</span>
+                            <h3 class="timeline-title">Full Stack Developer Trainee</h3>
+                            <div class="timeline-company"><i class="fas fa-building"></i> KodNest Technologies Pvt. Ltd. · Bangalore, KA</div>
+                        </div>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Completed 500+ hours of Full Stack training; built 4+ web apps using Java, Spring Boot, and JavaScript following Agile SDLC methodology.</li>
+                                <li>Implemented RESTful APIs with JDBC and Spring Boot; reduced data retrieval complexity by ~30% via SQL optimization and indexing.</li>
+                                <li>Achieved ~95% test coverage using Selenium & JUnit; managed version control for 3 team projects via Git & GitHub.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tech-tags">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">REST APIs</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Selenium</span>
+                            <span class="tech-tag">JUnit</span>
+                            <span class="tech-tag">Git</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Afield -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-card">
+                        <div class="timeline-header">
+                            <span class="timeline-period">Oct 2023 – Present</span>
+                            <h3 class="timeline-title">Founder & Lead Engineer</h3>
+                            <div class="timeline-company"><i class="fas fa-seedling"></i> Next Afield · Agriculture Services Platform</div>
+                        </div>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Conceptualized and architected a digital agro-platform empowering farmers with real-time market price tracking, crop insurance, logistics coordination, and profit analysis.</li>
+                                <li>Engineered 4 core modules with a Spring Boot REST backend and normalized MySQL schema (5 tables); integrated SMS & WhatsApp messaging pipelines targeting 100+ active farmers in Andhra Pradesh.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tech-tags">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">REST APIs</span>
+                            <span class="tech-tag">WhatsApp API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slash Mark -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-card">
+                        <div class="timeline-header">
+                            <span class="timeline-period">Dec 2023 – Jan 2024</span>
+                            <h3 class="timeline-title">Full Stack Web Development Intern</h3>
+                            <div class="timeline-company"><i class="fas fa-laptop-code"></i> Slash Mark · Remote</div>
+                        </div>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Built responsive user interfaces and connected frontend components to backend RESTful microservices.</li>
+                                <li>Implemented client-side validation, cross-browser compatibility, and modern UI interactions.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tech-tags">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google for Developers / EduSkills -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card timeline-card">
+                        <div class="timeline-header">
+                            <span class="timeline-period">Dec 2021 – Jun 2022</span>
+                            <h3 class="timeline-title">Android Developer Virtual Intern</h3>
+                            <div class="timeline-company"><i class="fab fa-android"></i> Google for Developers & EduSkills · Virtual Internship</div>
+                        </div>
+                        <div class="timeline-body">
+                            <ul>
+                                <li>Engineered native Android UI views, lifecycle events, and data persistence modules.</li>
+                                <li>Integrated REST API endpoints and adhered to Android Material Design guidelines.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tech-tags">
+                            <span class="tech-tag">Android</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">XML</span>
+                            <span class="tech-tag">SQLite</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="../#experience" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Return to Home</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom" style="border: none; padding-top: 0;">
+            <p>&copy; <span id="currentYear"></span> Srinu Naik Katravath. All rights reserved.</p>
+            <p>Designed with <i class="fas fa-heart" style="color: #ec4899;"></i> for modern performance.</p>
         </div>
-      </div>
-    </div>
+    </footer>
 
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>KodNest</h2>
-        </div>
-        <div class="desc">
-            <h3>Full Stack Development | Internship</h3>
-            <p>June 2024 - present</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Google for Developers, EduSkills</h2>
-        </div>
-        <div class="desc">
-            <h3>Android Developer | Internship</h3>
-            <p>De 2021 - June 2021</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container left">
-      <div class="content">
-        <div class="tag">
-          <h2>Slash Mark</h2>
-        </div>
-        <div class="desc">
-            <h3>Full Stack Web Development | Internship</h3>
-            <p>Dec 2023 - Jan 2024</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container right">
-      <div class="content">
-        <div class="tag">
-          <h2>Verzeo</h2>
-        </div>
-        <div class="desc">
-            <h3>Machine Learning with Python | Internship</h3>
-            <p>May 2022 - June 2022</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="morebtn">
-    <a href="/#experience" class="btn">
-        <i class="fas fa-arrow-left"></i>
-        <span>Back to Home</span>
-  </a>
-  </div>
-
-</div>
-</section>
-<!-- experience section ends -->
-
-<!-- footer section starts -->
-<section class="footer">
-
-  <div class="box-container">
-
-      <div class="box">
-          <h3>Srinu Naik's Portfolio</h3>
-          <p>Thank you for visiting my personal portfolio website. Connect with me over socials. <br/> <br/> Keep Rising 🚀. Connect with me over live chat!</p>
-      </div>
-
-      <div class="box">
-          <h3>quick links</h3>
-          <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
-          <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
-          <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
-          <a href="#education"><i class="fas fa-chevron-circle-right"></i> education</a>
-          <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
-          <a href="#experience"><i class="fas fa-chevron-circle-right"></i> experience</a>
-      </div>
-
-      <div class="box">
-          <h3>contact info</h3>
-          <p> <i class="fas fa-phone"></i>+91 XXX-XXX-XXXX</p>
-          <p> <i class="fas fa-envelope"></i>katravath11143@gmail.com</p>
-          <p> <i class="fas fa-map-marked-alt"></i>Andhra Pradesh, India</p>
-          <div class="share">
-
-              <a href="https://www.linkedin.com/in/srinunaikkatravath" class="fab fa-linkedin" aria-label="LinkedIn" target="_blank"></a>
-              <a href="https://github.com/srinunaikkatravath" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
-              <a href="mailto:katravath11143@gmail.com" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
-              <a href="https://twitter.com/iamsrinunaik" class="fab fa-twitter" aria-label="Twitter" target="_blank"></a>
-              <a href="https://t.me/iamsrinunaik" class="fab fa-telegram-plane" aria-label="Telegram" target="_blank"></a>
-          </div>
-      </div>
-  </div>
-
-  <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="https://www.linkedin.com/in/srinunaikkatravath"> Srinu Naik</a><p>&copy; <span id="year"></span> Srinu Naik. All Rights Reserved.</p></h1>
-
-</section>
-<!-- footer section ends -->
-
-<!-- scroll top btn -->
-<a href="#experience" class="fas fa-angle-up" id="scroll-top"></a>
-<!-- scroll back to top -->
-
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-<!-- jquery cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- scroll reveal anim -->
-<script src="https://unpkg.com/scrollreveal"></script>
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
-
-<script src="./script.js"></script>
-
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>

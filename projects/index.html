@@ -4,100 +4,161 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link id='favicon' rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-png">
-    <title>Projects | Portfolio Srinu Naik</title>
+    <title>Projects & Repositories | Srinu Naik Katravath</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link id="favicon" rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-png">
 </head>
-<body oncontextmenu="return false">
+<body>
 
-<!-- navbar starts -->
-<header>
-  <a href="/" class="logo"></i> Srinu Naik</a>
+    <!-- Header & Navigation -->
+    <header id="navbarHeader">
+        <div class="nav-container">
+            <a href="../#home" class="logo">
+                <span>Srinu Naik</span>
+                <div class="logo-dot"></div>
+            </a>
 
-  <div id="menu" class="fas fa-bars"></div>
-  <nav class="navbar">
-      <ul>
-      <li><a class="active" href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-      </ul>
-  </nav>
-</header>
-<!-- navbar ends -->
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a class="nav-link" href="../#home">Home</a></li>
+                    <li><a class="nav-link" href="../#about">About</a></li>
+                    <li><a class="nav-link" href="../#skills">Skills</a></li>
+                    <li><a class="nav-link" href="../#experience">Experience</a></li>
+                    <li><a class="nav-link" href="../#research">Research</a></li>
+                    <li><a class="nav-link active" href="../#projects">Projects</a></li>
+                    <li><a class="nav-link" href="../#contact">Contact</a></li>
+                </ul>
+            </nav>
 
-<!-- work project section starts -->
-<section class="work" id="work">
-
-  <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>-</span> Certifications <span>-</span> Hackathons <span>and</span> TechMeetups</h2>
-  
-  <div id="filters" class="button-group">
-    <button class="btn is-checked" data-filter="*">All</button>
-    <button class="btn" data-filter=".internship">Internships</button>
-    <button class="btn" data-filter=".project">Projects</button>
-    <button class="btn" data-filter=".certificate">Certifications</button>
-    <button class="btn" data-filter=".badge">Badges</button>
-    <button class="btn" data-filter=".hackathon">Hackathons</button>
-    <button class="btn" data-filter=".workshop">Workshops</button>
-    <button class="btn" data-filter=".meetup">TechMeetups</button>
-  </div>
-
-  <div class="box-container">
-
-    <!-- <div class="box tilt">
-      <img src="/assets/images/projects/agecalc.PNG" alt="" />
-      <div class="content">
-        <div class="tag">
-        <h3>Portfolio Website</h3>
+            <div class="nav-actions">
+                <a href="../#contact" class="btn btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;">Let's Talk</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-        <div class="desc">
-          <p>Personal portfolio website. Don't need much info about it, just scroll down. You're here only!</p>
-          <div class="btns">
-            <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
-            <a href="#" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
-          </div>
+    </header>
+
+    <main style="padding-top: 5rem;">
+        <section class="section-container">
+            <div class="section-header">
+                <div class="section-badge"><i class="fas fa-layer-group"></i> Works & Software</div>
+                <h1 class="section-title">Projects & <span class="gradient-text">Repositories</span></h1>
+                <p class="section-desc">Explore full-stack applications, artificial intelligence platforms, autonomous systems, and open-source contributions.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="ai">AI & Machine Learning</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack & Web</button>
+                <button class="filter-btn" data-filter="iot">Systems & IoT</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGridContainer">
+                <!-- Dynamically loaded from projects.json or rendered -->
+            </div>
+
+            <div style="text-align: center; margin-top: 3.5rem;">
+                <a href="https://github.com/srinunaikkatravath?tab=repositories" target="_blank" class="btn btn-primary" style="padding: 0.9rem 2.2rem; font-size: 1rem;">
+                    <i class="fab fa-github"></i>
+                    <span>Explore All 34+ Repositories on GitHub</span>
+                    <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i>
+                </a>
+            </div>
+
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <a href="../#projects" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Portfolio Home</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom" style="border: none; padding-top: 0;">
+            <p>&copy; <span id="currentYear"></span> Srinu Naik Katravath. All rights reserved.</p>
+            <p>Designed with <i class="fas fa-heart" style="color: #ec4899;"></i> for modern performance.</p>
         </div>
-      </div>
-    </div> -->   
+    </footer>
 
-  </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const yearSpan = document.getElementById('currentYear');
+            if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-  <div class="backbtn">
-    <a href="/#work" class="btn">
-        <i class="fas fa-arrow-left"></i>
-        <span>Back to Home</span>
-  </a>
-  </div>
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            }
 
-</section>
-<!-- work project section ends -->
+            try {
+                const res = await fetch('projects.json');
+                const projects = await res.json();
+                const container = document.getElementById('projectsGridContainer');
 
-<!-- scroll top btn -->
-<a href="#work" class="fas fa-angle-up" id="scroll-top"></a>
-<!-- scroll back to top -->
+                function renderProjects(items) {
+                    container.innerHTML = items.map(p => `
+                        <div class="glass-card project-card" data-category="${p.category || 'fullstack'}">
+                            <div>
+                                <div class="project-card-header">
+                                    <div class="project-top-meta">
+                                        <span class="project-category-tag">${p.category === 'ai' ? 'AI / ML' : p.category === 'iot' ? 'Systems & IoT' : 'Full Stack'}</span>
+                                        <div class="project-links">
+                                            ${p.links && p.links.code && p.links.code !== '#' ? `<a href="${p.links.code}" target="_blank" class="project-link-icon" title="View Source"><i class="fab fa-github"></i></a>` : ''}
+                                            ${p.links && p.links.view && p.links.view !== '#' && p.links.view !== p.links.code ? `<a href="${p.links.view}" target="_blank" class="project-link-icon" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>` : ''}
+                                        </div>
+                                    </div>
+                                    <h3 class="project-title">${p.name}</h3>
+                                </div>
+                                <p class="project-desc">${p.desc}</p>
+                                ${p.metrics ? `<div class="project-metrics"><i class="fas fa-bolt" style="color: var(--primary-cyan);"></i><span>${p.metrics}</span></div>` : ''}
+                            </div>
+                            <div>
+                                <div class="project-tech">
+                                    ${(p.tech || []).map(t => `<span class="tech-tag">${t}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
 
+                renderProjects(projects);
 
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS STARTS ==== -->
-<!-- jquery cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                // Filters
+                const filterBtns = document.querySelectorAll('.filter-btn');
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        const filterVal = btn.getAttribute('data-filter');
 
-<!-- vanilla tilt.js links -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js" integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- scroll reveal anim -->
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<!-- isotope filter plugin cdn -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<!-- ==== ALL MAJOR JAVASCRIPT CDNS ENDS ==== -->
-
-<script src="./script.js"></script>
-
+                        const cards = container.querySelectorAll('.project-card');
+                        cards.forEach(card => {
+                            const cat = card.getAttribute('data-category');
+                            if (filterVal === 'all' || cat === filterVal) {
+                                card.style.display = 'flex';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+            } catch (e) {
+                console.error('Error loading projects', e);
+            }
+        });
+    </script>
 </body>
 </html>
